@@ -9,7 +9,8 @@ google.youtube('v3').playlists.list({
 }).then((response)=> {
 const { data } = response;
 data.items.forEach((item) =>{
-    console.log(`title: ${item.snippet.title}\nDescription:${item.snippet.description}\n`);
+    console.log(item.snippet.thumbnails.default)
+   // console.log(`title: ${item.snippet.title}\nDescription:${item.snippet.description}\n`);
 })
 
 }).catch((err)=> console.log(err));
