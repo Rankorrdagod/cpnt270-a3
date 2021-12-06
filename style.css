@@ -1,4 +1,12 @@
 @import url("https://fonts.googleapis.com/css2?family=Cabin&display=swap");
+body {
+  background-color: #181818;
+}
+
+img {
+  max-width: 100%;
+}
+
 main {
   font-family: "Cabin", sans-serif;
   text-align: center;
@@ -11,11 +19,16 @@ h1 {
   color: red;
 }
 
+figure {
+  background-color: #fd5454;
+  border-radius: 1em;
+  padding-bottom: 10px;
+}
+
 .content {
   padding: 1em;
   margin: 2em;
   border-radius: 1em;
-  background-color: #fd5454;
 }
 
 .cards {
@@ -26,6 +39,10 @@ h1 {
 
 .card {
   flex: 0 1 24%;
+  background-color: #fd5454;
+  border-radius: 1em;
+  padding-top: 1em;
+  margin-bottom: 1em;
 }
 
 @media screen and (min-width: 40em) {
