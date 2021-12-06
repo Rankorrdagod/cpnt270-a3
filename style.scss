@@ -1,0 +1,16 @@
+$font-stack: Helvetica, sans-serif;
+$primary-color: rgb(196, 21, 21);
+$secondary-color: rgb(209, 209, 209);
+main {
+  font: 100% $font-stack;
+  color: $primary-color;
+  background-color: $secondary-color;
+  display: flex;
+  flex-direction: column;
+  text-align: center;
+}
+section {
+    color:palevioletred;
+    background-color: cadetblue;
+}
+

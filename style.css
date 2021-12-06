@@ -1,0 +1,15 @@
+main {
+  font: 100% Helvetica, sans-serif;
+  color: #c41515;
+  background-color: #d1d1d1;
+  display: flex;
+  flex-direction: column;
+  text-align: center;
+}
+
+section {
+  color: palevioletred;
+  background-color: cadetblue;
+}
+
+/*# sourceMappingURL=style.css.map */
