@@ -1,24 +1,45 @@
-$font-stack: Helvetica, sans-serif;
-$primary-color: rgb(196, 21, 21);
-$secondary-color: rgb(209, 209, 209);
-main {
+@import url('https://fonts.googleapis.com/css2?family=Cabin&display=swap');
+
+main{
+    font-family: 'Cabin', sans-serif;
+    text-align: center;
     align-items: center;
-  font: 100% $font-stack;
-  color: $primary-color;
-  background-color: $secondary-color;
-  display: flex;
-  flex-direction: column;
-  text-align: center;
+    align-content: center;
 }
-section {
-    color:palevioletred;
-    background-color: cadetblue;
+h1{
+    font-size: 8em;
+    color: red;
 }
-article {
-padding: 1em;
-margin: 2em;
-align-content: center;
-border-radius: 1em;
-background-color: white;
-max-width: 900px;
+
+.content {
+    padding: 1em;
+    margin: 2em;
+    border-radius: 1em;
+    background-color: rgb(253, 84, 84);
+    
+    }
+
+.cards {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+ }
+  
+ .card {
+     flex: 0 1 24%;
+ }
+
+
+
+//media query//
+ @media screen and (min-width: 40em) {
+    .cards {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: space-between;
+    }
+ 
+    .card {
+        flex: 0 1 calc(50% - 1em);
+    }
 }
