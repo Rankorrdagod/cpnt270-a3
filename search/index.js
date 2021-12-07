@@ -10,7 +10,7 @@ google.youtube('v3').playlists.list({
 const { data } = response;
 data.items.map((item) =>{
     console.log(item.snippet)
-   // console.log(`title: ${item.snippet.title}\nDescription:${item.snippet.description}\n`);
+   
 })
 
 }).catch((err)=> console.log(err));

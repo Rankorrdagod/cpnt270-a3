@@ -42,19 +42,127 @@
                     Create a project and name it what you would like, head to the library on the left hand side, select the YouTube API v3 in the search option or in the list provided on the page. Click create credentials.
 
                 </figcaption>
-                <img src="assets/images/credentialsetup.JPG" alt="logged into google">
+                <img src="assets/images/credentialsetup.JPG" alt="Credentials page">
                 
             </figure>
 
             <!--Step four-->
             <figure>
                 <figcaption class="content">
-                    This article will go over how to connect to the YouTube API on the backend of your website. There are a few requirements that need to be met in order for us to begin properly setting up our API, first we will need a Google account as well as a YouTube account associated with our Google account.
+                    Select the YouTube API and click Public data below leave user data blank as we will be using an API key. Click next. Your API key will displayed, this can always be found again in the credentials section of the Google Developer Console. Click done.
                 </figcaption>
-                <img src="assets/images/loggedin.jpg" alt="logged into google">
+                <img src="assets/images/createcreds.JPG" alt="Create credentials">
+                
+            </figure>
+
+            <!--Step five-->
+            <figure>
+                <figcaption class="content">
+                    Open the <a href="https://developers.google.com/youtube/v3/getting-started" target="_blank">YouTube API Documentation</a> page once again and head to the Reference tab at the top.
+                </figcaption>
+                <img src="assets/images/referenceyoutube.JPG" alt="logged into google">
+                <figcaption class="content">
+                    Note we will be using the Playlist tab on the left-hand side to make our test queries.
+                </figcaption>
+                
+            </figure>
+
+            <!--Step six-->
+            <figure>
+                <figcaption class="content">
+                   Expand the Try this API tab on the right, enter snippet in the part: and then your YouTube Channel Id in to the channelId: this can be found in the advanced settings of your YouTube account. Unclick 0Auth and leave API Key checked, as long as you are signed into your account after the previous steps your query should run. Test your queries here as it does not count towards your quota set by the API. 
+                </figcaption>
+                <img src="assets/images/youtubetest.JPG" alt="Youtube test query">
+                
+            </figure>
+
+             <!--Step seven-->
+             <figure>
+                <figcaption class="content">
+                   Now that we have confirmed our authentication and that the channel can be queried we can begin creating our code. First we will start with our <code>.env</code> file.
+                   <pre>
+                    YOUTUBE_TOKEN=[YOUR API KEY]
+                   </pre>
+                   And we're done with that.
+                </figcaption>
+                
                 
             </figure>
             
+             <!--Step eight-->
+             <figure>
+                <figcaption class="content">
+                   We will be using Node and will require dotenv as well as the Google API's in our code. 
+                   <pre>require('dotenv').config();
+
+                    const { google } = require('googleapis');</pre>
+                </figcaption>
+                <img src="assets/images/requirecode.JPG" alt="Youtube test query">
+                
+            </figure>
+
+              <!--Step nine-->
+              <figure>
+                <figcaption class="content">
+                   Next we will make a request to the API 
+                   <pre>google.youtube('v3').playlists.list({
+                    key: process.env.YOUTUBE_TOKEN,
+                    part: 'snippet',
+                    channelId: 'UC6kvOk8asYpTnu8H9Wst_Gg'
+                })</pre>
+                </figcaption>
+               
+         <img src="assets/images/requestapi.JPG" alt="Youtube test query">
+         <figcaption class="content"> 
+         Note we are directing to our <code>.env</code> file to keep our code secure.
+            </figcaption>
+            </figure>
+
+            <!--Step ten-->
+            <figure>
+                <figcaption class="content">
+                   Now we can call in the data and log our errors. 
+                   <pre>.then((response)=> {
+                    const { data } = response;
+                    data.items.map((item) =>{
+                        console.log(item.snippet)
+                       
+                    })
+                    
+                    }).catch((err)=> console.log(err));</pre>
+                </figcaption>
+                <img src="assets/images/callapi.JPG" alt="Youtube test query">
+                
+            </figure>
+
+            <!--Final Code-->
+            <figure>
+                <figcaption class="content">
+                   The code all together should look something like the below, there will of course be variations depending on desired data as well as channel Id.
+                   <pre>require('dotenv').config();
+
+                    const { google } = require('googleapis');
+                    
+                    google.youtube('v3').playlists.list({
+                        key: process.env.YOUTUBE_TOKEN,
+                        part: 'snippet',
+                        channelId: 'UC6kvOk8asYpTnu8H9Wst_Gg'
+                    }).then((response)=> {
+                    const { data } = response;
+                    data.items.map((item) =>{
+                        console.log(item.snippet)
+                       
+                    })
+                    
+                    }).catch((err)=> console.log(err));</pre>
+                </figcaption>
+                <img src="assets/images/backendcomplete.JPG" alt="Youtube test query">
+                <figcaption class="content">
+                    Run <code>$node index.js</code> and your data will appear.
+                </figcaption>
+                <img src="assets/images/success.JPG" alt="Youtube test query">
+            </figure>
+
          
             <section class="cards">
                  
