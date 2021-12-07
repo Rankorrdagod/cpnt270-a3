@@ -1,6 +1,8 @@
 # cpnt270-a3
 [Github Pages](https://rankorrdagod.github.io/cpnt270-a3/)
-Test account info in assignment comments.
+- Static site designed as a walkthrough for pulling data for YouTube API.
+- Test account info in assignment comments.
+
 ## Install 
 To display backend data
 ```
