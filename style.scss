@@ -3,6 +3,10 @@ body{
     background-color: rgb(24, 24, 24);
 }
 img {max-width:100%;}
+.youtube{
+    width: 20em;
+    fill: rgb(253, 84, 84);
+}
 main{
     font-family: 'Cabin', sans-serif;
     text-align: center;
@@ -10,9 +14,18 @@ main{
     align-content: center;
     
 }
+.setup{
+    font-size: 5em;
+    text-decoration: none;
+    color:white;
+    
+}
 h1{
     font-size: 8em;
-    color: red;
+    color: rgb(253, 84, 84);
+}
+h2{
+    font-size: 2em;
 }
 figure{
     background-color: rgb(253, 84, 84);
@@ -34,6 +47,7 @@ figure{
     display: flex;
     flex-wrap: wrap;
     justify-content: space-between;
+    padding: 3em;
     
  }
   

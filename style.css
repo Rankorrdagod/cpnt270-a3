@@ -7,6 +7,11 @@ img {
   max-width: 100%;
 }
 
+.youtube {
+  width: 20em;
+  fill: #fd5454;
+}
+
 main {
   font-family: "Cabin", sans-serif;
   text-align: center;
@@ -14,9 +19,19 @@ main {
   align-content: center;
 }
 
+.setup {
+  font-size: 5em;
+  text-decoration: none;
+  color: white;
+}
+
 h1 {
   font-size: 8em;
-  color: red;
+  color: #fd5454;
+}
+
+h2 {
+  font-size: 2em;
 }
 
 figure {
@@ -35,6 +50,7 @@ figure {
   display: flex;
   flex-wrap: wrap;
   justify-content: space-between;
+  padding: 3em;
 }
 
 .card {
